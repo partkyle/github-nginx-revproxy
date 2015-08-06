@@ -1,0 +1,10 @@
+github:
+  build: .
+  environment:
+    - DNSDOCK_ALIAS=github.docker
+
+test:
+  build: test
+  links:
+    - github
+  command: curl -f http://github/rate_limit
